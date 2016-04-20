@@ -1,0 +1,18 @@
+Press enter to calibrate the GEV model to ACKB returns data..
+$conv
+[1] 0
+
+$nllh
+[1] 125.7692
+
+$mle
+[1] 2.5181848 1.0658912 0.3619637
+
+$se
+[1] 0.1472930 0.1287586 0.1096970
+
+If routine fails, try changing plotting interval
+If routine fails, try changing plotting interval
+
+The middle graph shows the return level profile log likelihood for 504 days (ACKB)
+According to the model, the maximum loss of 16.35% Should only occur every 24.37 years

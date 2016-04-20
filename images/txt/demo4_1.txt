@@ -1,0 +1,18 @@
+Press enter to calibrate the GEV model to SPY returns data..
+$conv
+[1] 0
+
+$nllh
+[1] 115.3815
+
+$mle
+[1] 1.7589772 0.7714055 0.3086853
+
+$se
+[1] 0.09826911 0.08308167 0.09073835
+
+If routine fails, try changing plotting interval
+If routine fails, try changing plotting interval
+
+The middle graph shows the return level profile log likelihood for 504 days (SPY)
+According to the model, the maximum loss of 12.95% Should only occur every 49.08 years
