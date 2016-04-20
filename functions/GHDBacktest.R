@@ -13,7 +13,7 @@ GHDBacktest <- function(asset, calibration.interval = 252,
   
   # Set up the cluster for parallel computation
   cl <- makeCluster(nrCores); registerDoParallel(cl)
-  clusterEvalQ(cl,eval(parse("config.R")))
+  clusterEvalQ(cl,eval(parse("config/config.R")))
   invisible(
     clusterExport(cl,c("returns",
                        "calibration.interval",
@@ -61,21 +61,21 @@ GHDBacktest <- function(asset, calibration.interval = 252,
   plot.min <- min(backtest.allResults[,"Returns"])
   plot(backtest.allResults[,"Returns"], type = "p", xlab = "Time", 
        main=paste("VaR ", (1-alpha)*100 ,"% - GHD versus Normal (",assetName,")",sep=""),
-       ylab = "Percentage Losses", pch = 19, cex = 0.5,ylim = c(plot.min,plot.max))
+       ylab = "Percentage Returns", pch = 19, cex = 0.5,ylim = c(plot.min,plot.max))
   abline(h = 0, col = "grey")
   lines(backtest.allResults[, "ghd.VaR"], col = "blue", lwd = 2)
   lines(backtest.allResults[, "nor.VaR"], col = "red", lwd = 2)
-  legend("bottomleft", legend = c("Losses", "VaR GHD", "VaR Normal"),
+  legend("bottomleft", legend = c("Returns", "VaR GHD", "VaR Normal"),
          col = c("black", "blue", "red"),lty = c(NA, 1, 1), pch = c(19, NA, NA), bty = "n")
   
   # Plot ES results
   plot(backtest.allResults[, "Returns"], type = "p", xlab = "Time", 
        main=paste("ES " , (1-alpha)*100,"% - GHD versus Normal (",assetName,")",sep=""),
-       ylab = "Percentage Losses", pch = 19, cex = 0.5,ylim = c(plot.min,plot.max))
+       ylab = "Percentage Returns", pch = 19, cex = 0.5,ylim = c(plot.min,plot.max))
   abline(h = 0, col = "grey")
   lines(backtest.allResults[, "ghd.ES"], col = "blue", lwd = 2)
   lines(backtest.allResults[, "nor.ES"], col = "red", lwd = 2)
-  legend("bottomleft", legend = c("Losses", "ES GHD", "ES Normal"),
+  legend("bottomleft", legend = c("Returns", "ES GHD", "ES Normal"),
          col = c("black", "blue", "red"),lty = c(NA, 1, 1), pch = c(19, NA, NA), bty = "n")
   
   ghd.VaRTest = VaRTest(alpha = alpha, VaR = backtest.allResults[, "ghd.VaR"], 

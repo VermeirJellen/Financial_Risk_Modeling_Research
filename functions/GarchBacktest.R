@@ -38,7 +38,7 @@ GarchBacktest <- function(returns=NULL, asset=NULL, level=0.01, calibration.inte
   
   
   cl <- makeCluster(nrCores); registerDoParallel(cl)
-  clusterEvalQ(cl, eval(parse("config.R")))
+  clusterEvalQ(cl, eval(parse("config/config.R")))
   clusterExport(cl,c("garch.density",
                      "distribution.model",
                      "level", "qdist.function"), envir=environment())

@@ -25,9 +25,12 @@ From a more practical point of view we perform out of sample backtests and run s
 
 # Demos
 #### Running the Demo's
-The entrance point of the main demo can be found in `./demo_main.R`. First, `./config/config.R` (line 8) must be sourced to load the relevant packages and functions into memory (also view `./functions` folder). Next, `./config/load_data.R` (line 10) must be sourced to load the timeseries data: This script downloads BEL20 stock and SPDR ETF data from an external database server located on the Amazon RDS servers. For more information on the data setup, view <https://github.com/VermeirJellen/Securities_Master_Database>
+The entrance point of the main demo can be found in `./demo_main.R`. First, `./config/config.R` (line 7) must be sourced to load the relevant packages and functions into memory (also view `./functions` folder). Next, `./config/load_data.R` (line 10) must be sourced to load the timeseries data: This script downloads BEL20 stock and SPDR ETF data from an external database server located on the Amazon RDS servers. For more information on the data setup, view <https://github.com/VermeirJellen/Securities_Master_Database>
 
-The individual demo's can be launched separately from eachother by running the relevant lines from the main script. The output graphs can also be viewed in the `./images` folder.
+The individual demo's can be launched separately from eachother by running the relevant lines from the main script. The output graphs can also be viewed in the `./images` folder. 
+
+**Note:** some of the backtest demo's might consume an excessive amount of memory on low-RAM machines. If this issue occurs then the problem can be mitigated by modifying the `nrCores` setting to a smaller number inside the demo script function calls (by default, the max number of cores / threads is allocated to the backtest functions).
+
 ##Part 1 - Stylized Facts of Asset Returns
 In the first part of the demo suite we investigate the stylistic features and properties of univariate and multivariate asset return series.
 #### Demo 1 - Asset Return Properties
@@ -115,7 +118,7 @@ View chapter 5 of `./paper/Financial_Risk_Modeling.pdf` and `./demos/garch_backt
 #### DEMO 7 - (E)GARCH univariate VaR targeting
 View chapter 5 of `./paper/Financial_Risk_Modeling.pdf` and `./demos/var_targeting_univariate.R`. Additionally, also view `./functions/VaRTargetingUnivariateBacktest.R` for technical implementation details. In this demo we use the EGARCH tool to perform daily rebalancing of our position in an underlying asset such that an expected next-day VaR of 2% is targeted. We do this for the SPY and BEL20 indices.
 
-## Part 3 - Multivariate Financial Risk Modelling
+## Part 3 - Multivariate Financial Risk Modeling
 In the third part of the demo suite we investigate the topic of multivariate financial risk modeling.
 
 #### DEMO 8 - Exploratory data analysis for multi-asset portfolios

@@ -32,7 +32,7 @@ GarchCopulaBacktest <- function(returns=NULL, assets=NULL, weights=NULL, calibra
   nrIterations <- floor((nrow(returns)-calibration.interval)/refit.every)
   
   cl <- makeCluster(nrCores); registerDoParallel(cl)
-  clusterEvalQ(cl,eval(parse("config.R")))
+  clusterEvalQ(cl,eval(parse("config/config.R")))
   garchSettings <- c("garch.model", "garch.order", 
                      "arma.order", "include.mean", "distribution.model")
   clusterExport(cl,c("returns",
