@@ -2,7 +2,7 @@
 
 ###Global Research Context
 This project is part of a larger academic research project. The global project aims to give a broad overview on the state of the art regarding both financial risk management and robust portfolio optimization. The methods and techniques under consideration mainly consist of a recombination of well known statistical
-concepts and robust convex optimization procedures that are applied to finance-related problems. However, the added value of the project aims to be of a more practical nature. Our main objective is to derive useful tools from the theoretical concepts and illustrate and apply the techniques in a realistic setting in such a way that industry professionals can directly benefit from them. The research project was initially divided into three main parts:
+concepts and robust convex optimization procedures that are applied to finance-related problems. However, the added value of the project aims to be of a more practical nature. The main goal of this thesis is to derive useful tools from the theoretical concepts and illustrate and apply the techniques in a realistic setting in such a way that industry professionals can directly benefit from them. The research project was initially divided into three main parts:
 
 1. Financial Risk Management
 2. Robust Portfolio Optimization
@@ -70,10 +70,7 @@ In the second part of the demo we investigate the risk assessment properties by 
 #### DEMO 3 - Backtesting the Generalized Hypberbolic Distribution (GHD)
 View chapter 3 of `./paper/Financial_Risk_Modeling.pdf` and `./demos/ghd_backtest.R`. Additionally, also view `./functions/GHDBacktest.R` for technical implementation details. In this demo, we use the GHD distribution to conduct a one day out of sample forecast of the 99% Value at Risk (VaR) and Expected Shortfall (ES) for the daily returns of SPY and AGS in a moving window of 252 days. A comparison is made with the normal distribution. Next, we perform conditional and unconditional VaR tests on the out of sample backtest results:
 
-- The null hypo
-- 
-- 
--  of a correct amount of unconditional exceedances is rejected for the Gaussian distribution model.
+- The null hypothesis of a correct amount of unconditional exceedances is rejected for the Gaussian distribution model.
 - For the GHD distributions the the null hypothesis can not be rejected.
 - Results for the unconditional exceedances are inconclusive.
 
