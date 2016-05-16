@@ -2,7 +2,7 @@
 
 ###Global Research Context
 This project is part of a larger academic research project. The global project aims to give a broad overview on the state of the art regarding both financial risk management and robust portfolio optimization. The methods and techniques under consideration mainly consist of a recombination of well known statistical
-concepts and robust convex optimization procedures that are applied to finance-related problems. However, the added value of the project aims to be of a more practical nature. The main goal of this thesis is to derive useful tools from the theoretical concepts and illustrate and apply the techniques in a realistic setting in such a way that industry professionals can directly benefit from them. The research project was initially divided into three main parts:
+concepts and robust convex optimization procedures that are applied to finance-related problems. However, the added value of the project aims to be of a more practical nature. Our main objective is to derive useful tools from the theoretical concepts and illustrate and apply the techniques in a realistic setting in such a way that industry professionals can directly benefit from them. The research project was initially divided into three main parts:
 
 1. Financial Risk Management
 2. Robust Portfolio Optimization
